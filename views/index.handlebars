@@ -1,40 +1,79 @@
-<h1>It's Time for a Node-Eat-Da-Burger!</h1>
-<h2>Place your burger name order here!</h2>
 
-<ul>
-  {{#each burger}}
-    {{#if name}}
-      {{> name/devoured = true}}
-    {{/if}}
-  {{/each}}
-</ul>
 
-<ul>
-  {{#each burger}}
-    {{#unless name}}
-      {{> name/not-devoured = true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+<div class="img"><img src="../assets/img/burger.png" alt="burger"></div>
+<h4>Eat-Da-Burger!</h4>
 
-<h2>Add Your Burger Name</h2>
-<form class="create-form">
 
-  <div class="form-group">
-    <label for="ca">Burger:</label>
-    <input type="text" id="burger" name="name">
-  </div>
-d
-  <div class="form-group">
-    <label for="name">Name?</label><br>
-    <input type="text" name="name"><br>
-  </div>
+  <div class="not-devoured" style="display:none">
+    <p>
+    {{this.id}}. {{this.burger_name}}
+  </p>
+    <button data-planid="{{this.id}}.{{this.devoured}}" class="btn-default" id="not-devoured" value="1">Devour It!</button>
+    </div>
 
-  <div class="dev" id="devoured">
-  </div>
 
-  <div class="dev" id="not-devoured">
-  </div>
+  <div class="devoured" style="display:none" value="0">
+    <p>
+      {{this.id}}. {{this.burger_name}}
+    </p>
+    </div>
 
-  <button type="submit">Devour It!</button>
+
+
+<form class="create-burger">
+    <input type="text" id="burger_name" rows="2" cols="10"></input>
+      <p style="font-size: 13px">"Enter a burger you want to eat and click the "submit" button!"</p>
+  <button type="submit" class="btn-primary">Submit</button>
 </form>
+
+
+
+
+
+<script type="text/javascript">
+
+$(".create-burger").on("submit", function(event) {
+    event.preventDefault();
+
+    var id = $(this).data("id");
+    var devoured = $(this).data("devoured");
+
+    $(".not-devoured").show();
+
+    var newburger = {
+      devoured: $("#devoured").val(),
+      burger_name: $("#burger-name").val().trim()
+    };
+
+    $.ajax("/", {
+      type: "POST",
+      data: newburger
+    }).then(
+      function(data) {
+        console.log("created new burger");
+        $("#create-burger").val("");
+        location.reload();
+        
+      });
+  });
+  
+
+  $(".btn-default").on("click", function(event) {
+
+    $(".devoured").show();
+    $(".not-devoured").hide();
+    $(".btn-default").hide(); 
+
+    var id = $(this).data("id");
+
+    $.ajax("/" + id, {
+      type: "DELETE",
+    }).then(
+      function() {
+        console.log("deleted burger", id);
+        location.reload();
+      });
+  });
+
+
+</script>

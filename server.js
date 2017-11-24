@@ -1,27 +1,27 @@
 
 var express = require("express");
 var bodyParser = require("body-parser");
-var methods = require("methods-override");
-
+var methods = require("method-override");
 
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3306;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(express.static("public"));
 
-// Static directory
-app.use(express.static("app/public"));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// Routes
-// =============================================================
-require("./app/routes/api-routes.js")(app);
-require("./app/routes/html-routes.js")(app);
+var exphbs = require("express-handlebars");
 
-// Starts the server to begin listening
-// =============================================================
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+app.use(express.static("public"));
+
+var routes = require("./controllers/burgers_controller.js");
+
+app.use("/", routes);
+
+
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
