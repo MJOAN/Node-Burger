@@ -7,7 +7,6 @@ const app = express();
 const router = express.Router();
 
 
-
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var obj = {
@@ -18,18 +17,27 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/index", function(req, res) {
+router.post("/", function(req, res) {
+  console.log(req.body);
+
   burger.insertOne([
     "burger_name", "devoured"
   ], [
     req.body.burger_name, req.body.devoured
   ], function(result) {
+
+    var result = JSON.stringify(result)
+
+    console.log(result);
     // Send back the ID of the new burger
-    res.json({ id: result.id });
+
+    res.render("index", { burger_name: result.burger_name });
+    console.log("Burger name posted: ", burger_name)
+    // res.json({ burger_name: obj });
   });
 });
 
-router.put("/index/:id", function(req, res) {
+router.put("/", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
