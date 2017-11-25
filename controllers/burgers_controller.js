@@ -26,7 +26,7 @@ router.post("/", function(req, res) {
     req.body.burger_name, req.body.devoured
   ], function(result) {
 
-    var result = JSON.stringify(result)
+    var result = JSON.stringify(result);
 
     console.log(result);
     // Send back the ID of the new burger

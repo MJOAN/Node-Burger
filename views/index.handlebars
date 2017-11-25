@@ -9,7 +9,7 @@
     <p>
        {{this.id}}. {{this.burger_name}}
     </p>
-    <button data-planid="{{this.id}}.{{this.devoured}}" class="btn-default" id="not-devoured" value="1">Devour It!</button>
+    <button data-id="{{this.id}}" data-devoured="{{this.devoured}}" class="btn-default" id="not-devoured" value="1">Devour It!</button>
 </div>
 
 
@@ -29,7 +29,6 @@
     </form>
 </div>
 
-
 <script type="text/javascript">
 $(".create-burger").on("submit", function(event) {
     event.preventDefault();
@@ -37,8 +36,8 @@ $(".create-burger").on("submit", function(event) {
     $(".not-devoured").show();
 
     var id = $(this).data("id");
+    var devoured = $(this).data("devoured");  // devoured === false 
     var burger_name = $("#burger").val();
-    var devoured = false;
 
     var newburger = {
         id: id,
