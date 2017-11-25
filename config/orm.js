@@ -1,5 +1,6 @@
-// Import MySQL connection.
+
 var connection = require("./connection.js");
+// var pool = require('.,connection.js');
 
 function printQuestionMarks(num) {
   var arr = [];
@@ -27,9 +28,15 @@ function objToSql(ob) {
 }
 
 var orm = { 
+
+/*pool.getConnection(function(err, connection) {
+  // connected! (unless `err` is set)*/
+
   selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
+
+      onnection.release();
       if (err) {
         throw err;
       }
@@ -37,6 +44,9 @@ var orm = {
     });
   },
 
+/*pool.getConnection(function(err, connection) {
+  // connected! (unless `err` is set)*/
+  
   insertOne: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
@@ -57,6 +67,10 @@ var orm = {
       cb(result);
     });
   },
+
+/*pool.getConnection(function(err, connection) {
+  // connected! (unless `err` is set)*/
+
   // objColVals  {name: panther, sleepy: true}
   updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
