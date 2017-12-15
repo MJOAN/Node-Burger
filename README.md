@@ -181,29 +181,9 @@ All the recommended files and directories from the steps above should look like 
 
 - - -
 
-### Minimum Requirements
+![Node Screenshot 7](image.png)
 
-Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed.
-
-- - -
-
-### Hosting on Heroku
-
-Now that we have a backend to our applications, we use Heroku for hosting. Please note that while **Heroku is free**, it will request credit card information if you have more than 5 applications at a time or are adding a database. 
-
-Please see [Heroku’s Account Verification Information](https://devcenter.heroku.com/articles/account-verification) for more details. 
-
-- - -
-
-### One More Thing
-
-This is a really tough homework assignment, but we want you to put in your best effort to finish it.
-
-If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
-
-
-
-**Good Luck!**
+*Node.js application `burger.js` showing combo screenshot of sequel pro, express code, the yellow background and submit button on the home page .*
 
 ## Copyright
 
