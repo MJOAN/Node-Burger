@@ -4,7 +4,8 @@
   "description": "Node-Burger-Express-MySQL-Handlebars-ORM",
   "main": "server.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,6 @@
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.10",
     "mysql": "^2.15.0"
-  }
+  },
+  "devDependencies": {}
 }
