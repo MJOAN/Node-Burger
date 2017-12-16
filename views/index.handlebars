@@ -9,7 +9,7 @@
   {{#each burger_name}}
     {{#unless devoured}}
     <p>
-       {{this.id}}. {{burger_name}}
+       {{this.id}}. {{this.burger_name}}
     </p>
     <button data-planid="{{this.id}}.{{this.devoured}}" class="btn-default" id="not-devoured" value="1">Devour It!</button>
     {{/unless}}

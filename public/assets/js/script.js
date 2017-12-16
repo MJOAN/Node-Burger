@@ -43,7 +43,7 @@ $(".btn-default").on("click", function(event) {
         type: "PUT"
     }).then(
         function() {
-            console.log("deleted burger", id);
+            console.log("updated burger", id);
             //location.reload();
         });
     });
