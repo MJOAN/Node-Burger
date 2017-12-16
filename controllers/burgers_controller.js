@@ -1,14 +1,17 @@
-const burger = require("../models/burger.js");
-
 const express = require("express");
 const bodyParser = require("body-parser");
-
-const app = express();
 const router = express.Router();
+const burger = require("../models/burger.js");
 
 
+// get route -> index
 router.get("/", function(req, res) {
-  burger.selectAll(function(data) {
+  res.redirect("/burgers");
+});
+
+
+router.get("/burgers", function(req, res) {
+  burger.all(function(data) {
     var obj = {
       burger_name: data
     };
@@ -17,32 +20,26 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/", function(req, res) {
-  console.log(req.body);
+router.post("/burgers/create", function(req, res) {
+  console.log("express post working");
+  burger.create(req.body.burger_name, function(result) {
 
-  burger.insertOne([
-    "burger_name", "devoured"
-  ], [
-    req.body.burger_name, req.body.devoured
-  ], function(result) {
+        var result = JSON.stringify(result)
+        console.log(result);
 
-    var result = JSON.stringify(result)
-
-    console.log(result);
-    // Send back the ID of the new burger
-
-    res.render("index", { burger_name: result.burger_name });
-    console.log("Burger name posted: ", burger_name)
+        // res.render("index", { burger_name: result.burger_name });
+        console.log("Burger name posted: ", result)
     // res.json({ burger_name: obj });
+        res.redirect("/");
+        //res.render("index", { burger_name: result.burger_name });
   });
 });
 
-router.put("/", function(req, res) {
+router.put("/burgers/update", function(req, res) {
   var condition = "id = " + req.params.id;
-
   console.log("condition", condition);
 
-  burger.updateOne({
+  burger.update({
     devoured: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows == 0) {

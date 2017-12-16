@@ -5,23 +5,31 @@
 <h4>Eat-Da-Burger!</h4>
 
 
-<div class="not-devoured" style="display:none">
+<div class="not-devoured" style="display:none" value="1">
+  {{#each burger_name}}
+    {{#unless devoured}}
     <p>
-       {{this.id}}. {{this.burger_name}}
+       {{this.id}}. {{burger_name}}
     </p>
     <button data-planid="{{this.id}}.{{this.devoured}}" class="btn-default" id="not-devoured" value="1">Devour It!</button>
+    {{/unless}}
+        {{/each}}
 </div>
 
 
 <div class="devoured" style="display:none" value="0">
+    {{#each burger_name}}
+        {{#if this.devoured}}
         <p>
-            {{this.id}}. {{this.burger_name}}
+            <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}">
         </p>
+    {{/if}}
+        {{/each}}
 </div>
 
 
 <div class="create-burger">
-    <form class="form-group row">
+    <form action="/burgers/create" method="POST" class="form-group row">
         <label for="burger-name"></label>
         <input type="text" class="form-control col-xs-3" data="id" placeholder="burger name" id="burger">
         <p style="font-size: 13px">"Enter a burger you want to eat and click the "submit" button!"</p>
@@ -29,55 +37,3 @@
     </form>
 </div>
 
-
-<script type="text/javascript">
-$(".create-burger").on("submit", function(event) {
-    event.preventDefault();
-
-    $(".not-devoured").show();
-
-    var id = $(this).data("id");
-    var burger_name = $("#burger").val();
-    var devoured = false;
-
-    var newburger = {
-        id: id,
-        burger_name: burger_name,
-        devoured: devoured
-    };
-
-    console.log(newburger, id);
-
-    $.ajax("/", {
-        type: "POST",
-        data: JSON.stringify(newburger)
-    }).then(
-        function(data) {
-            console.log("created new burger");
-            $("#create-burger").val("");
-            // location.reload();
-
-        });
-});
-
-
-$(".btn-default").on("click", function(event) {
-
-    $(".devoured").show();
-    $(".not-devoured").hide();
-    $(".btn-default").hide();
-
-    var id = $(this).data("id");
-    var devoured = true;
-
-
-    $.ajax("/" + devoured, {
-        type: "DELETE",
-    }).then(
-        function() {
-            console.log("deleted burger", id);
-            // location.reload();
-        });
-});
-
-</script>

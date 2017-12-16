@@ -16,19 +16,23 @@ function objToSql(ob) {
 
   for (var key in ob) {
     var value = ob[key];
+    // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
+      // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
+      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
+      // e.g. {sleepy: true} => ["sleepy=true"]
       arr.push(key + "=" + value);
     }
   }
+
   return arr.toString();
 }
-
-var orm = { 
-  selectAll: function(tableInput, cb) {
-    var queryString = "SELECT * FROM " + tableInput + ";";
+var orm = {
+  all: function(table, cb) {
+    var queryString = "SELECT * FROM " + table + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -36,33 +40,31 @@ var orm = {
       cb(result);
     });
   },
-
-  insertOne: function(table, cols, vals, cb) {
+  create: function(table, col, val, cb) {
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
-    queryString += cols.toString();
+    queryString += col.toString();
     queryString += ") ";
     queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
+    queryString += printQuestionMarks(val.length);
     queryString += ") ";
 
     console.log(queryString);
 
-    connection.query(queryString, vals, function(err, result) {
+    connection.query(queryString, val, function(err, result) {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   },
-  // objColVals  {name: panther, sleepy: true}
-  updateOne: function(table, objColVals, condition, cb) {
+  // An example of objColVals would be {name: panther, sleepy: true}
+  update: function(table, objColVal, condition, cb) {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += objToSql(objColVal);
     queryString += " WHERE ";
     queryString += condition;
 
@@ -71,11 +73,23 @@ var orm = {
       if (err) {
         throw err;
       }
+
       cb(result);
     });
   },
+  delete: function(table, condition, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
 
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  }
 };
 
-// Export the orm object for the model (cat.js).
 module.exports = orm;
