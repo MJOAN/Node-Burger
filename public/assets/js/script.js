@@ -17,7 +17,7 @@ $("form").on("submit", function(event) {
     };
     console.log(newburger);
     
-    $.ajax("/burgers/create", {
+    $.ajax("/create", {
         type: "POST",
         data: JSON.stringify(newburger),
         contentType: 'application/json',
@@ -39,12 +39,14 @@ $(".btn-default").on("click", function(event) {
     var id = $(this).data("id");
     var devoured = true;
 
-    $.ajax("/burgers/update" + devoured, {
-        type: "PUT"
-    }).then(
-        function() {
-            console.log("updated burger", id);
-            //location.reload();
+    $.ajax("/update", {
+       type: "PUT",
+        data: JSON.stringify(devoured),
+        contentType: 'application/json',
+        success: function(data) {
+            console.log("devoured burger");
+        // location.reload();
+            }
         });
     });
 
