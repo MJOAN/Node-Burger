@@ -1,4 +1,4 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
+/*// Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
 
 $("form").on("submit", function(event) {
@@ -52,3 +52,4 @@ $(".btn-default").on("click", function(event) {
 
 });
 
+*/
