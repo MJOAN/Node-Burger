@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>heroku_1ec5e2f52cac00a</string>
+			<key>host</key>
+			<string>us-cdbr-iron-east-05.cleardb.net</string>
+			<key>name</key>
+			<string>clearDB_heroku_burger</string>
+			<key>port</key>
+			<integer>3306</integer>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>1</integer>
+			<key>user</key>
+			<string>bdfca89e4c3658</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>latin1</string>
+			<key>contentFilter</key>
+			<dict/>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDA0VSRudWxs0wkK
+			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
+			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
+			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
+			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
+			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeAClJpZNIeHy0uXxAPTlNN
+			dXRhYmxlU3RyaW5noy0vI1hOU1N0cmluZ9IeHzEyXk5TTXV0YWJs
+			ZUFycmF5ozEzI1dOU0FycmF50h4fIjWiIiNfEA9OU0tleWVkQXJj
+			aGl2ZXLRODlUZGF0YYABAAgAEQAaACMALQAyADcARQBLAFIAWgBl
+			AGwAcAByAHQAdgB6AHwAfgCAAIIAhwCMAJEAugDBAMIAwwDFAMoA
+			1QDeAPQA+AEFAQ4BEwEVARcBGQEeASgBKgEtATIBRAFIAVEBVgFl
+			AWkBcQF2AXkBiwGOAZMAAAAAAAACAQAAAAAAAAA6AAAAAAAAAAAA
+			AAAAAAABlQ==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{1, 0}, {603, 375}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>CREATE TABLE burgers (
+  id Int( 11 ) AUTO_INCREMENT NOT NULL,
+  burger_name VARCHAR( 255) NOT NULL,
+  devoured BOOLEAN DEFAULT false,
+  date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY ( id ) 
+);
+</string>
+			<key>table</key>
+			<string>burgers</string>
+			<key>view</key>
+			<string>SP_VIEW_CONTENT</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>259</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>CREATE TABLE burgers (
+  id Int( 11 ) AUTO_INCREMENT NOT NULL,
+  burger_name VARCHAR( 255) NOT NULL,
+  devoured BOOLEAN DEFAULT false,
+  date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY ( id ) 
+)</string>
+		<string>DROP DATABASE IF EXISTS burgers_db</string>
+		<string>INSERT INTO quotes (quote, author) VALUES ('Know your "why" in any of your endeavors. That will push you through any wall you hit.', 'Albert Bahia');
+INSERT INTO quotes (quote, author) VALUES ('In any moment of decision, the best thing you can do is the right thing, the next best thing is the wrong thing, and the worst thing you can do is nothing.', "Theodore Roosevelt");
+INSERT INTO quotes (quote, author) VALUES ('Never leave home without your cardigan.', "Owens O'Brien");
+INSERT INTO quotes (quote, author) VALUES ('Give me fuel, Give me fire, Give me that which I desire, Ooh!', "Nate Tuvera");
+INSERT INTO quotes (quote, author) VALUES ("TiK ToK, on the clock; But the party don't stop no; Whoa-oh oh oh; Whoa-oh oh oh; Don't stop, make it pop; DJ, blow my speakers up", "Michael Stearne");
+INSERT INTO quotes (quote, author) VALUES ("They told him don't you ever come around here; Don't want to see your face, you better disappear; The fire's in their eyes and their words are really clear; So beat it, just beat it", "Dan Orrico");
+INSERT INTO quotes (quote, author) VALUES ("Sup brah?", "Ruby Pradhan")</string>
+		<string>CREATE TABLE quotes
+(
+	id int NOT NULL AUTO_INCREMENT,
+	author varchar(255) NOT NULL,
+	quote TEXT NOT NULL,
+	PRIMARY KEY (id)
+)</string>
+		<string>CREATE DATABASE quotes_db;
+USE quotes_db</string>
+		<string>DROP DATABASE IF EXISTS `burgers_db`;
+CREATE DATABASE `burgers_db`</string>
+		<string>INSERT INTO burgers (burger_name) VALUES ('HealthyVeggie');
+INSERT INTO burgers (burger_name) VALUES ('BaconWithCheese');
+INSERT INTO burgers (burger_name, devoured) VALUES ('PineappleScrumptious', true)</string>
+		<string>CREATE TABLE `burgers` (
+  `id` Int( 11 ) AUTO_INCREMENT NOT NULL,
+  `burger_name` VARCHAR( 255) NOT NULL,
+  `devoured` BOOLEAN DEFAULT false,
+  `date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY ( `id` ) 
+)</string>
+		<string>INSERT INTO burgers (burger_name) VALUES ('HealthyVeggie')</string>
+		<string>CREATE TABLE `burgers` (
+  `id` Int( 11 ) AUTO_INCREMENT NOT NULL,
+  `burger_name` VARCHAR( 255) NOT NULL,
+  `devoured` BOOLEAN DEFAULT false,
+  `date` DATETIME NOT NULL,
+  PRIMARY KEY ( `id` ) 
+)</string>
+		<string>INSERT INTO burgers (name) VALUES ('HealthyVeggie')</string>
+		<string>CREATE TABLE `burgers` (
+  `id` Int( 11 ) AUTO_INCREMENT NOT NULL,
+  `burger_name` VARCHAR( 255) NOT NULL,
+  `devoured` BOOLEAN NOT NULL,
+  `date` DATETIME NOT NULL,
+  PRIMARY KEY ( `id` ) 
+)</string>
+		<string>INSERT INTO cats (name) VALUES ('Meeses');
+INSERT INTO cats (name) VALUES ('Bobbi');
+INSERT INTO cats (name, sleepy) VALUES ('Sylvester', true);
+INSERT INTO cats (name, sleepy) VALUES ('Marilyn Manson', true);
+INSERT INTO cats (name, sleepy) VALUES ('Joe Biden', true);
+INSERT INTO cats (name) VALUES ('Owens')</string>
+		<string>CREATE TABLE cats
+(
+	id int NOT NULL AUTO_INCREMENT,
+	name varchar(255) NOT NULL,
+	sleepy BOOLEAN DEFAULT false,
+	PRIMARY KEY (id)
+)</string>
+		<string>CREATE DATABASE cat_db;
+USE cat_db</string>
+		<string>INSERT INTO emails (email) VALUES ('sally_strong@gmail.com')</string>
+		<string>CREATE TABLE emails
+(
+  id int NOT NULL AUTO_INCREMENT,
+  email varchar(255) NOT NULL,
+  PRIMARY KEY (id)
+)</string>
+		<string>-- Create the table tasks.
+CREATE TABLE wish
+(
+id int NOT NULL AUTO_INCREMENT,
+wish varchar(255) NOT NULL,
+PRIMARY KEY (id)
+)</string>
+		<string>CREATE TABLE wishes
+(
+id int NOT NULL AUTO_INCREMENT,
+wish varchar(255) NOT NULL,
+PRIMARY KEY (id)
+)</string>
+		<string>-- Create the table tasks.
+CREATE TABLE wishes
+(
+id int NOT NULL AUTO_INCREMENT,
+wish varchar(255) NOT NULL,
+PRIMARY KEY (id)
+)</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.6.36-log</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
