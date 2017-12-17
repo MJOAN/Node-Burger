@@ -2,12 +2,7 @@
 
 ### Overview
 
-In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
-
-
-### Important
-
-Be sure to utilize the [MYSQL Heroku Deployment Guide](../Supplemental/MySQLHerokuDeploymentProcess.pdf) in order to deploy your assignment.
+In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
 
 ### Before You Begin
 
@@ -18,8 +13,6 @@ Be sure to utilize the [MYSQL Heroku Deployment Guide](../Supplemental/MySQLHero
 * Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
 
 * Your app will store every burger in a database, whether devoured or not.
-
-* [Check out this video of the app for a run-through of how it works](burger_demo.mp4).
 
 ## Instructions
 
@@ -81,9 +74,7 @@ Be sure to utilize the [MYSQL Heroku Deployment Guide](../Supplemental/MySQLHero
 1. Inside your `burger` directory, create a folder named `config`.
 
 2. Create a `connection.js` file inside `config` directory.
-
    * Inside the `connection.js` file, setup the code to connect Node to MySQL.
-
    * Export the connection.
 
 3. Create an `orm.js` file inside `config` directory.
@@ -105,9 +96,7 @@ Be sure to utilize the [MYSQL Heroku Deployment Guide](../Supplemental/MySQLHero
   * In `models`, make a `burger.js` file.
 
     * Inside `burger.js`, import `orm.js` into `burger.js`
-
     * Also inside `burger.js`, create the code that will call the ORM functions using burger specific input for the ORM.
-
     * Export at the end of the `burger.js` file.
 
 #### Controller setup
@@ -132,11 +121,8 @@ Be sure to utilize the [MYSQL Heroku Deployment Guide](../Supplemental/MySQLHero
    * Create the `layouts` directory inside `views` directory.
 
      * Create the `main.handlebars` file inside `layouts` directory.
-
      * Setup the `main.handlebars` file so it's able to be used by Handlebars.
-
      * Setup the `index.handlebars` to have the template that Handlebars can render onto.
-
      * Create a button in `index.handlebars` that will submit the user input into the database.
 
 #### Directory structure
@@ -179,24 +165,16 @@ All the recommended files and directories from the steps above should look like 
         └── main.handlebars
 ```
 
-<<<<<<< HEAD
 
-### Hosting on Heroku
+
+### Hosting on Heroku: https://whispering-dusk-61412.herokuapp.com/burgers
 
 Now that we have a backend to our applications, we use Heroku for hosting. Please note that while **Heroku is free**, it will request credit card information if you have more than 5 applications at a time or are adding a database. 
 
-Please see [Heroku’s Account Verification Information](https://devcenter.heroku.com/articles/account-verification) for more details. 
-
-- - -
-
-**Good Luck!**
-=======
-- - -
-
+![Node Screenshot 8](screenshot1.png)
 ![Node Screenshot 7](image.png)
-
 *Node.js application `burger.js` showing combo screenshot of sequel pro, express code, the yellow background and submit button on the home page .*
->>>>>>> 4751aca7f3e3ee1f31efcb253fe02e8e801c0d59
+
 
 ## Copyright
 
