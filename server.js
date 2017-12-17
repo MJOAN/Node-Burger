@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 
+
 const app = express();
 const PORT = process.env.PORT || 3306;
 
@@ -20,13 +21,12 @@ const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.use(express.static("public"));
-
 var routes = require("./controllers/burgers_controller.js");
 
 app.use("/", routes);
-app.use("/update", routes);
-app.use("/create", routes);
+app.use("/burgers/create", routes);
+app.use("/burgers/update", routes);
+
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);

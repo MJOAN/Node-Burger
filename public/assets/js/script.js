@@ -10,12 +10,15 @@ $("form").on("submit", function(event) {
 
     $(".not-devoured").show();
     console.log("created div not devoured to show");
+    // var devoured = false;
+    var burger_name = $("#burger").val().trim();
+
+    $(".not-devoured").show();
 
     var newburger = {
         burger_name: burger_name,
         devour: false
     };
-
     console.log(newburger);
     
     $.ajax("/burgers/create", {
@@ -52,5 +55,3 @@ $(".btn-default").on("click", function(event) {
     });
 
 });
-
-

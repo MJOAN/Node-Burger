@@ -179,6 +179,7 @@ All the recommended files and directories from the steps above should look like 
         └── main.handlebars
 ```
 
+<<<<<<< HEAD
 
 ### Hosting on Heroku
 
@@ -189,6 +190,13 @@ Please see [Heroku’s Account Verification Information](https://devcenter.herok
 - - -
 
 **Good Luck!**
+=======
+- - -
+
+![Node Screenshot 7](image.png)
+
+*Node.js application `burger.js` showing combo screenshot of sequel pro, express code, the yellow background and submit button on the home page .*
+>>>>>>> 4751aca7f3e3ee1f31efcb253fe02e8e801c0d59
 
 ## Copyright
 

@@ -1,4 +1,4 @@
-USE burgers_db;
+USE ty6pdn06rp6kjsis;
 
 INSERT INTO burgers (burger_name) VALUES ('HealthyVeggie');
 INSERT INTO burgers (burger_name) VALUES ('BaconWithCheese');
