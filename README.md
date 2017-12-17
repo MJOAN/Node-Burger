@@ -179,11 +179,24 @@ All the recommended files and directories from the steps above should look like 
         └── main.handlebars
 ```
 
+<<<<<<< HEAD
+
+### Hosting on Heroku
+
+Now that we have a backend to our applications, we use Heroku for hosting. Please note that while **Heroku is free**, it will request credit card information if you have more than 5 applications at a time or are adding a database. 
+
+Please see [Heroku’s Account Verification Information](https://devcenter.heroku.com/articles/account-verification) for more details. 
+
+- - -
+
+**Good Luck!**
+=======
 - - -
 
 ![Node Screenshot 7](image.png)
 
 *Node.js application `burger.js` showing combo screenshot of sequel pro, express code, the yellow background and submit button on the home page .*
+>>>>>>> 4751aca7f3e3ee1f31efcb253fe02e8e801c0d59
 
 ## Copyright
 

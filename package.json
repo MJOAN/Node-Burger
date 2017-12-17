@@ -1,5 +1,5 @@
 {
-  "name": "node-burger",
+  "name": "burger",
   "version": "1.0.0",
   "description": "Node-Burger-Express-MySQL-Handlebars-ORM",
   "main": "server.js",

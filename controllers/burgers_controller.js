@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const router = express.Router();
 const burger = require("../models/burger.js");
 
+
 router.get("/", function(req, res) {
   res.redirect("/burgers");
 });
@@ -19,7 +20,8 @@ router.post("/create", function(req, res) {
   burger.create(req.body.burger_name, function(result) {
       // var result = JSON.stringify(result)
       console.log(result);
-      console.log("Burger name posted: ", result.burger_name)
+      // res.render("index", { burger_name: result.burger_name });
+      console.log("Burger name posted: ", result)
       res.redirect("/");
       // res.render("index", { burger_name: result.burger_name, id: result.insertId });
   });
@@ -31,5 +33,6 @@ router.put("/update", function(req, res) {
     res.redirect("/");
   });
 });
+
 
 module.exports = router;

@@ -6,6 +6,10 @@ $("form").on("submit", function(event) {
     console.log('select_link clicked');
 
     var id = $(this).data("id");
+    var burger_name = $("#burger").val().trim();
+
+    $(".not-devoured").show();
+    console.log("created div not devoured to show");
     // var devoured = false;
     var burger_name = $("#burger").val().trim();
 
@@ -39,7 +43,11 @@ $(".btn-default").on("click", function(event) {
     var id = $(this).data("id");
     var devoured = true;
 
+<<<<<<< HEAD
     $.ajax("/update", {
+=======
+    $.ajax("/burgers/update", {
+>>>>>>> 7f66a91d6405e28a3726ff08d73050274c873cf7
        type: "PUT",
         data: JSON.stringify(devoured),
         contentType: 'application/json',
@@ -51,5 +59,6 @@ $(".btn-default").on("click", function(event) {
     });
 
 });
+<<<<<<< HEAD
 
 */
