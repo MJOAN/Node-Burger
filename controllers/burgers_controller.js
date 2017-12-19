@@ -28,11 +28,14 @@ router.post("/create", function(req, res) {
 });
 
 router.put("/update", function(req, res) {
-   burger.update(req.body.burger_id, function(result) {
-    console.log(result)
+  console.log(req.body);
+ var condition = "id = " + req.body.burger_id;
+  console.log("condition", condition);
+  burger.update({
+    devoured: true
+  }, condition, function(result) {
     res.redirect("/");
   });
 });
-
 
 module.exports = router;
