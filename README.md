@@ -1,8 +1,8 @@
 # Node Express Handlebars
 
-### Overview
+## Overview
 
-In this assignment, I created a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM using the MVC design pattern; with Node and MySQL to query and route data in the app, and Handlebars to generate HTML.
+Here I created a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM using the MVC design pattern; with Node and MySQL to query and route data in the app, and Handlebars to generate HTML.
 
 Check out [my demo](http://node-burger.herokuapp.com/burgers) to study the app's basic functionality. This demo is deployed on Heroku! 
 
@@ -17,7 +17,7 @@ Check out [my demo](http://node-burger.herokuapp.com/burgers) to study the app's
 * Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
 * Your app will store every burger in a database, whether devoured or not.
 
-## Instructions
+## Process
 
 #### App Setup
 
@@ -135,7 +135,8 @@ All the recommended files and directories from the steps above should look like 
         └── main.handlebars
 ```
 
-### Hosting on Heroku: https://node-burger.herokuapp.com/burgers
 
-## Copyright
-Coding Boot Camp (C) 2016. All Rights Reserved.
+
+
+##### Copyright
+##### Coding Boot Camp (C) 2016. All Rights Reserved.
