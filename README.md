@@ -2,9 +2,7 @@
 
 ## Overview
 
-Here I created a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM using the MVC design pattern; with Node and MySQL to query and route data in the app, and Handlebars to generate HTML.
-
-Check out [my demo](http://node-burger.herokuapp.com/burgers) to study the app's basic functionality. This demo is deployed on Heroku! 
+Here I created a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM using the MVC design pattern with Coding Boot Camp template code; utilizing Node and MySQL to query and route data in the app, and Handlebars to generate HTML. Check out [my demo](http://node-burger.herokuapp.com/burgers) to study the app's basic functionality. This demo is deployed on Heroku! 
 
 ![Node Screenshot 8](screenshot1.png)
 ![Node Screenshot 7](image.png)
